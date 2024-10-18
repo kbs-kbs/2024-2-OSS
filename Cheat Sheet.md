@@ -25,9 +25,13 @@ $ git config --global user.name hskang
 $ git config --global user.email hskang@gmail.com
 ```
 
-`$ git config --global init.defaultBranch main`
+```
+$ git config --global init.defaultBranch main
+```
 
-`$ git config --local core.editor 'code --wait'`
+```
+$ git config --local core.editor 'code --wait'
+```
 
 저장소 생성
 
