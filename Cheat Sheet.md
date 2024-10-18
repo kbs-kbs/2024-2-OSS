@@ -49,3 +49,12 @@ $ git init .
 ```
 $ git init new-repo
 ```
+
+파일 생성
+
+```
+echo "1st version" > file1
+```
+
+```
+echo "Add a line" >> file1
