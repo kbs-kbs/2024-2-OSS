@@ -11,12 +11,19 @@ $ cat 파일1,파일2 ... 파일n > 새파일	파일 n개를 차례로 연결해
 
 기본 설정
 
-$ git config --system core.autocrlf true   
-$ git config --system core.safecrlf false   
-$ git config --global user.name hskang
-$ git config --global user.email.hskang@gmail.com
-$ git config --global init.defaultBranch main
-$ git config --local core.editor 'code --wait'
+`$ git config --system core.autocrlf true`
+   
+`$ git config --system core.safecrlf false`   
+
+`$ git config --global user.name hskang`
+
+`$ git config --global`   
+
+`user.email.hskang@gmail.com`   
+
+`$ git config --global init.defaultBranch main`
+
+`$ git config --local core.editor 'code --wait'`
 
 저장소 생성
 
