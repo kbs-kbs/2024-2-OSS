@@ -1,71 +1,75 @@
-리눅스 명령어
+## 기본 설정
 
-간편 파일 편집
-
-$ echo a > f   
-$ echo b >> f   
-$ cat 파일명	파일의 내용을 화면에 표시합니다.
-$ cat 파일1 >> 파일2	파일1의 내용을 파일2 끝에 연결합니다.
-$ cat 파일1,파일2 ... 파일n > 새파일	파일 n개를 차례로 연결해서 새로운 파일을 생성합니다.
-
-기본 설정
-
-```
-$ git config --system core.autocrlf true
+```bash
+git config --system core.autocrlf true
 ```
 
-```
-$ git config --system core.safecrlf false
+```bash
+git config --system core.safecrlf false
 ```   
 
-```
-$ git config --global user.name kbs-kbs
-```
-
-```
-$ git config --global user.email yaglus58@gmail.com
+```bash
+git config --global user.name kbs-kbs
 ```
 
-```
-$ git config --global init.defaultBranch main
-```
-
-```
-$ git config --local core.editor 'code --wait'
+```bash
+git config --global user.email yaglus58@gmail.com
 ```
 
-저장소 생성
-
-```
-$ git init
+```bash
+git config --global init.defaultBranch main
 ```
 
-또는
-
-```
-$ git init .
+```bash
+git config --local core.editor "code --wait"
 ```
 
-```
-$ git init new-repo
+## 저장소 생성
+
+```bash
+git init
+# 또는
+git init .
 ```
 
-파일 생성
-
+```bash
+git init new-repo
 ```
+
+## 파일 생성
+
+```bash
 echo "1st version" > file1
 ```
 
-```
+```bash
 echo "Add a line" >> file1
 ```
 
-```
+```bash
 cat > file2
-1st version [Enter]
-Add a line [ctrl + c]
+1st version # Enter
+Add a line # Ctrl + C
 ```
 
-파일 내용 출력
+```bash
+touch emptyfile1 emptyfile2
+```
 
+## 파일 내용 출력
+
+```bash
+cat file1 file2
+```
+
+## 파일 삭제
+
+```bash
+rm file1 file2
+```
+
+## 깃 단축 명령어 설정
+
+```bash
+git config 
 ```
