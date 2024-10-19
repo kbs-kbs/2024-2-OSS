@@ -49,7 +49,7 @@ echo "Add a line" >> file1
 ```bash
 cat > file2
 1st version # Enter
-Add a line # Ctrl + C
+Add a line # Ctrl + D
 ```
 
 ```bash
