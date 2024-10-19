@@ -63,9 +63,16 @@ cat file1 file2
 ```
 
 ## 파일 삭제
+### 작업 디렉토리에서
 
 ```bash
 rm file1 file2
+```
+
+### 스테이징 영역에서
+
+```bash
+git rm --cached file1
 ```
 
 ## 깃 단축 명령어 설정
