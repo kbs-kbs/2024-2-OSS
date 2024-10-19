@@ -62,7 +62,10 @@ echo "Add a line" >> file1
 
 ```
 cat > file2
+1st version [Enter]
+Add a line [ctrl + c]
 ```
 
 파일 내용 출력
 
+```
