@@ -19,11 +19,11 @@ $ git config --system core.safecrlf false
 ```   
 
 ```
-$ git config --global user.name hskang
+$ git config --global user.name kbs-kbs
 ```
 
 ```
-$ git config --global user.email hskang@gmail.com
+$ git config --global user.email yaglus58@gmail.com
 ```
 
 ```
@@ -58,3 +58,11 @@ echo "1st version" > file1
 
 ```
 echo "Add a line" >> file1
+```
+
+```
+cat > file2
+```
+
+파일 내용 출력
+
