@@ -71,5 +71,33 @@ rm file1 file2
 ## 깃 단축 명령어 설정
 
 ```bash
-git config 
+git config alias.ci commit
+git config alias.cm "commit -m"
+git config alias.cam "commit -am"
 ```
+
+## 스테이징 영역에 추가
+### 작업 디렉토리의 모든 파일
+
+```bash
+git add --all | -A
+```
+
+### 현재 디렉토리의 모든 파일(ex: 작업 디렉토리 하위의)
+
+```bash
+git add .
+```
+
+### 특정 파일
+
+```bash
+git add [path/]file1
+```
+
+### 와일드카드
+
+```bash
+git add [path/]file*
+```
+
