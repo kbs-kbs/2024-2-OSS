@@ -68,7 +68,7 @@ ls [-a | -l | -al]
 ### 스테이징 영역
 
 ```bash
-git ls-files [-s]
+git ls-files [-s / --stage]
 ```
 [-s: 해시값도 보기]
 
