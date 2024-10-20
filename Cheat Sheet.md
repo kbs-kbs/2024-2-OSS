@@ -49,7 +49,7 @@ echo "Add a line" >> file1
 ```bash
 cat > file2
 1st version # Enter
-Add a line # Ctrl + C: cancel
+Add a line # Ctrl + D: 현재 행 저장 종료 / Ctrl + C: 현재 행 취소 종료
 ```
 
 ```bash
