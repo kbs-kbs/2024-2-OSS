@@ -78,7 +78,8 @@ git ls-files [-s / --stage]
 git ls-tree [--name-only | --object-only] HEAD
 ```
 
-[파일 이름만 출력, SHA-1 해시 값만 출력]
+- `--name-only`: 파일 이름만 출력
+- `--object-only`: SHA-1 해시 값만 출력
 
 ## 파일 내용 출력
 
