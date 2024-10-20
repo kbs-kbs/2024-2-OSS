@@ -56,6 +56,12 @@ Add a line # Ctrl + D: 현재 행 저장 종료 / Ctrl + C: 현재 행 취소 �
 touch emptyfile1 emptyfile2
 ```
 
+## 파일 목록 출력
+
+```bash
+ls -a
+```
+
 ## 파일 내용 출력
 
 ```bash
