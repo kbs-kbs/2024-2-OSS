@@ -57,10 +57,28 @@ touch emptyfile1 emptyfile2
 ```
 
 ## 파일 목록 출력
+### 작업 디렉토리
 
 ```bash
-ls -a
+ls [-a | -l | -al]
 ```
+
+[숨긴 파일 보기 | 자세히 보기 | 둘 다]
+
+### 스테이징 영역
+
+```bash
+git ls-files [-s]
+```
+[-s: 해시값도 보기]
+
+### 깃 저장소(로컬 리포지토리)
+
+```bash
+git ls-tree [--name-only | --object-only] HEAD
+```
+
+[파일 이름만 출력, SHA-1 해시 값만 출력]
 
 ## 파일 내용 출력
 
