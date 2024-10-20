@@ -70,7 +70,7 @@ ls [-a | -l | -al]
 ```bash
 git ls-files [-s / --stage]
 ```
-[-s: 해시값도 보기]
+- `-s`, `--stage`: SHA-1 해시 값도 출력
 
 ### 깃 저장소(로컬 리포지토리)
 
