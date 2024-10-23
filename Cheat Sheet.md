@@ -65,7 +65,6 @@ ls [-a | -l | -al]
 
 - `-a`: 숨긴 파일 포함
 - `-l`: 자세히 보기
-- `-al`: `-a` + `-l`
 
 ### 스테이징 영역
 
@@ -135,3 +134,60 @@ git add [path/]file1
 git add [path/]file*
 ```
 
+## 로컬 리포지토리에 커밋
+
+```bash
+git commit [-a | -m | -am]
+```
+
+- `-a`: 한 번 add 되었던 파일을 add를 거치지 않고 커밋
+- `-m '커밋 메시지'`: 커밋 메시지를 작성
+
+## 커밋 전환
+
+이전 커밋으로 이동하면 반드시 Detached HEAD 상태가 됩니다.   
+Detached HEAD가 가리키는 커밋은 브랜치가 참조할 수 없게 됩니다. 따라서 간접 참조(HEAD~ 등)가 불가능합니다.   
+하지만 해시 값으로 직접 참조할 수 있습니다.
+add, commit은 여전히 가능합니다.
+Attached HEAD 상태에서는 HEAD가 항상 현재 체크아웃된 브랜치의 가장 최신 커밋을 가리키고 있습니다.
+
+### 한 단계 이전 버전으로 전환
+
+```bash
+git checkout HEAD~
+```
+
+### n 단계 이전 버전으로 전환
+
+```bash
+git checkout HEAD~n
+```
+
+### 최신 버전으로 전환
+
+```bash
+git checkout HEAD | main
+```
+
+### 특정 버전으로 전환
+
+```bash
+git checkout id
+```
+
+
+
+## 브랜치 이동
+
+### 기본 브랜치로 이동
+```bash
+git switch main
+```
+
+### Detached HEAD 만들기
+
+현재 브랜치의 특정 버전을 분리합니다.
+
+```bash
+git switch --detach <tag name> | <revision number>
+```
