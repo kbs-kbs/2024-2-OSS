@@ -144,13 +144,6 @@ git commit [-a | -m | -am]
 - `-m '커밋 메시지'`: 커밋 메시지를 작성
 
 ## 커밋 전환
-
-이전 커밋으로 이동하면 반드시 Detached HEAD 상태가 됩니다.   
-Detached HEAD가 가리키는 커밋은 브랜치가 참조할 수 없게 됩니다. 따라서 간접 참조(HEAD~ 등)가 불가능합니다.   
-하지만 해시 값으로 직접 참조할 수 있습니다.
-add, commit은 여전히 가능합니다.
-Attached HEAD 상태에서는 HEAD가 항상 현재 체크아웃된 브랜치의 가장 최신 커밋을 가리키고 있습니다.
-
 ### 한 단계 이전 버전으로 전환
 
 ```bash
@@ -172,9 +165,15 @@ git checkout HEAD | main
 ### 특정 버전으로 전환
 
 ```bash
-git checkout id
+git checkout <tag name> | <revision number>
 ```
 
+> [!NOTE]
+> 이전 커밋으로 이동하면 반드시 Detached HEAD 상태가 됩니다.   
+> Detached HEAD가 가리키는 커밋은 브랜치가 참조할 수 없게 됩니다. 따라서 간접 참조(HEAD~ 등)가 불가능합니다.   
+> 하지만 해시 값으로 직접 참조할 수 있습니다.
+> add, commit은 여전히 가능합니다.
+> Attached HEAD 상태에서는 HEAD가 항상 현재 체크아웃된 브랜치의 가장 최신 커밋을 가리키고 있습니다.
 
 
 ## 브랜치 이동
