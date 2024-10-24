@@ -25,15 +25,29 @@ git config --local core.editor "code --wait"
 ```
 
 ## 저장소 생성
+### 현재 폴더를 저장소로 만들기
 
 ```bash
-git init
-# 또는
-git init .
+git init [.]
 ```
+
+### 현재 폴더 하위에 저장소 생성
 
 ```bash
 git init new-repo
+```
+
+## 저장소 복제
+### 현재 폴더 하위에 원격 저장소를 복제
+
+```bash
+git clone <url>
+```
+
+### 하위 폴더를 만들고 내부에 원격 저장소를 복제
+
+```bash
+git clone <url> new-dir
 ```
 
 ## 파일 생성
