@@ -249,36 +249,38 @@ git checkout <tag name> | <revision number>
 > add, commit은 여전히 가능합니다.
 > Attached HEAD 상태에서는 HEAD가 항상 현재 체크아웃된 브랜치의 가장 최신 커밋을 가리키고 있습니다.
 
-## 브랜치 생성
-
-```bash
-git branch hotfix
-```
-
-```bash
-git checkout -b hotfix
-```
-
-```bash
-git switch -c hotfix
-```
-
-### 브랜치 목록 보기
+## 저장소의 브랜치 목록 보기
 
 ```bash
 git branch
 ```
 
+## 브랜치 생성
 
+```bash
+git branch new-br
+```
+
+```bash
+git checkout -b new-br
+```
+
+```bash
+git switch -c new-br
+```
+
+## 브랜치 이름 변경
+### 현재 브랜치 이름 변경
+
+```bash
+git branch -m named-br
+```
 
 ## 브랜치 이동
-
 ### 기본 브랜치로 이동
 ```bash
 git switch main
 ```
-
-
 
 ```bash
 git switch --detach <tag name> | <revision number>
