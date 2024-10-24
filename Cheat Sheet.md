@@ -89,17 +89,43 @@ cat file1 file2
 ```
 
 ## 파일 삭제
-### 작업 디렉토리에서
+### 작업 디렉토리에서 삭제
 
 ```bash
 rm file1 file2
 ```
 
-### 스테이징 영역에서
+### 스테이징 영역에서 삭제
 
 ```bash
-git rm --cached file1
+git rm --cached file
 ```
+
+### 작업 디렉토리와 스테이징 영역에서 모두 삭제
+
+```bash
+git rm file
+```
+
+## 파일 복구
+### 작업 디렉토리의 파일을 스테이징 영역의 파일 상태로 복구
+
+```bash
+git restore file
+```
+
+### 스테이징 영역의 파일을 HEAD 커밋의 파일 상태로 복구
+
+```bash
+git restore --staged file
+```
+
+### 작업 디렉토리와 스테이징 영역의 파일을 HEAD 커밋의 파일 상태로 복구
+
+```bash
+git restore [--source=HEAD] --staged --worktree file
+```
+
 
 ## 깃 단축 명령어 설정
 
@@ -134,7 +160,7 @@ git add [path/]file1
 git add [path/]file*
 ```
 
-## 로컬 리포지토리에 커밋
+## 커밋
 
 ```bash
 git commit [-a | -m | -am]
@@ -142,6 +168,39 @@ git commit [-a | -m | -am]
 
 - `-a`: 한 번 add 되었던 파일을 add를 거치지 않고 커밋
 - `-m '커밋 메시지'`: 커밋 메시지를 작성
+
+## 영역 비교
+### 작업 디렉토리와 스테이징 영역 비교
+
+```bash
+git diff
+```
+
+### 작업 디렉토리와 깃 저장소 비교
+
+```bash
+git diff HEAD
+```
+
+### 스테이징 영역과 깃 저장소 비교
+
+```bash
+git diff --staged HEAD
+```
+
+Note: switching to 'HEAD~2'.
+You are in 'detached HEAD' state. ...
+
+
+## 커밋 이력 보기
+
+```bash
+git log --all
+```
+
+- `--all`: 현재 브랜치에 관계 없이 모든 브랜치의 커밋 이력 보기
+- `--oneline`: 커밋 하나당 한 줄로 표시
+- `--graph`:
 
 ## 커밋 전환
 ### 한 단계 이전 버전으로 전환
@@ -175,6 +234,27 @@ git checkout <tag name> | <revision number>
 > add, commit은 여전히 가능합니다.
 > Attached HEAD 상태에서는 HEAD가 항상 현재 체크아웃된 브랜치의 가장 최신 커밋을 가리키고 있습니다.
 
+## 브랜치 생성
+
+```bash
+git branch hotfix
+```
+
+```bash
+git checkout -b hotfix
+```
+
+```bash
+git switch -c hotfix
+```
+
+### 브랜치 목록 보기
+
+```bash
+git branch
+```
+
+
 
 ## 브랜치 이동
 
@@ -183,10 +263,16 @@ git checkout <tag name> | <revision number>
 git switch main
 ```
 
-### Detached HEAD 만들기
 
-현재 브랜치의 특정 버전을 분리합니다.
 
 ```bash
 git switch --detach <tag name> | <revision number>
+```
+
+## 태그
+
+특정 커밋을 버전으로 사용하기
+
+```bash
+git tag
 ```
