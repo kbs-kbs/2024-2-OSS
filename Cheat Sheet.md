@@ -121,7 +121,7 @@ cat file1 file2
 rm file1 file2
 ```
 
-### 스테이징 영역에서 삭제
+### 인덱스에서 삭제
 
 ```bash
 git rm --cached file
@@ -216,9 +216,11 @@ index(tracked) ⊇ staging area(staged)
 
 - `Untracked files:`: 작업 디렉토리의 untracked 상태의 파일 목록
 - `Changes not staged for commit:`: `_M`
+  - `deleted` `_D`:
 - `Changes to be committed:`: 스테이징 영역의 파일 목록
   - `new file:`: `A_` 리포지토리에는 없고 스테이징 영역에만 있는 파일입니다. (staged 상태)
   - `modified`: `M_` 리포지토리에 있고 (modified & staged 상태)
+  - `deleted:` `` 
 
 - `nothing to commit, working tree clean`: 작업 디렉토리의 모든 파일이 tracked 상태이며 unmodified 상태입니다.
 
