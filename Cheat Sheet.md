@@ -204,6 +204,32 @@ git commit [-a | -m | -am]
 
 <br>
 
+## 저장소의 파일 상태 보기
+
+```bash
+git status
+```
+
+index(tracked) ⊇ staging area(staged)
+
+### 결과
+
+- `Untracked files:`: 작업 디렉토리의 untracked 상태의 파일 목록
+- `Changes not staged for commit:`: `_M`
+- `Changes to be committed:`: 스테이징 영역의 파일 목록
+  - `new file:`: `A_` 리포지토리에는 없고 스테이징 영역에만 있는 파일입니다. (staged 상태)
+  - `modified`: `M_` 리포지토리에 있고 (modified & staged 상태)
+
+- `nothing to commit, working tree clean`: 작업 디렉토리의 모든 파일이 tracked 상태이며 unmodified 상태입니다.
+
+staged + unmodified 상태인 파일은 알 수 없습니다.
+
+
+파일이 스테이징 영역이나 리포지토리 중 한 곳에만 있어도 Git은 해당 파일을 추적하는 것입니다.
+작업 디렉토리에만 존재하는 파일은 Git이 추적하지 않는 파일입니다.
+
+<br>
+
 ## 영역 비교
 ### 작업 디렉토리와 스테이징 영역 비교
 
@@ -225,29 +251,6 @@ git diff --staged HEAD
 
 Note: switching to 'HEAD~2'.
 You are in 'detached HEAD' state. ...
-
-<br>
-
-## 저장소의 파일 상태 보기
-
-```bash
-git status
-```
-
-### 결과
-
-- `Untracked files:`: 작업 디렉토리의 untracked 상태의 파일 목록
-- `Changes to be committed:`: 스테이징 영역의 파일 목록
-  - `new file:`: 리포지토리에는 없고 스테이징 영역에만 있는 파일입니다. (staged 상태)
-  - `modified`: 리포지토리에 있고 (modified & staged 상태)
-
-- `nothing to commit, working tree clean`: 작업 디렉토리의 모든 파일이 tracked 상태이며 unmodified 상태입니다.
-
-staged + unmodified 상태인 파일은 알 수 없습니다.
-
-
-파일이 스테이징 영역이나 리포지토리 중 한 곳에만 있어도 Git은 해당 파일을 추적하는 것입니다.
-작업 디렉토리에만 존재하는 파일은 Git이 추적하지 않는 파일입니다.
 
 
 <br>
