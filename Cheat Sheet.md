@@ -24,6 +24,8 @@ git config --global init.defaultBranch main
 git config --local core.editor "code --wait"
 ```
 
+<br>
+
 ## 저장소 생성
 ### 현재 폴더를 저장소로 만들기
 
@@ -37,6 +39,8 @@ git init [.]
 git init new-repo
 ```
 
+<br>
+
 ## 저장소 복제
 ### 현재 폴더 하위에 원격 저장소를 복제
 
@@ -49,6 +53,8 @@ git clone <url>
 ```bash
 git clone <url> new-dir
 ```
+
+<br>
 
 ## 파일 목록 출력
 ### 작업 디렉토리의 파일 목록 출력
@@ -76,6 +82,7 @@ git ls-tree [--name-only | --object-only] HEAD
 - `--name-only`: 파일 이름만 출력
 - `--object-only`: SHA-1 해시 값만 출력
 
+<br>
 
 ## 파일 생성
 
@@ -97,11 +104,15 @@ Add a line # Ctrl + D: 현재 행 저장 종료 / Ctrl + C: 현재 행 취소 �
 touch emptyfile1 emptyfile2
 ```
 
+<br>
+
 ## 파일 내용 출력
 
 ```bash
 cat file1 file2
 ```
+
+<br>
 
 ## 파일 삭제
 ### 작업 디렉토리에서 삭제
@@ -122,6 +133,8 @@ git rm --cached file
 git rm file
 ```
 
+<br>
+
 ## 파일 복구
 ### 작업 디렉토리의 파일을 스테이징 영역의 파일 상태로 복구
 
@@ -141,6 +154,7 @@ git restore --staged file
 git restore [--source=HEAD] --staged --worktree file
 ```
 
+<br>
 
 ## 깃 단축 명령어 설정
 
@@ -149,6 +163,8 @@ git config alias.ci commit
 git config alias.cm "commit -m"
 git config alias.cam "commit -am"
 ```
+
+<br>
 
 ## 스테이징 영역에 추가
 ### 작업 디렉토리의 모든 파일
@@ -175,6 +191,8 @@ git add [path/]file1
 git add [path/]file*
 ```
 
+<br>
+
 ## 커밋
 
 ```bash
@@ -183,6 +201,8 @@ git commit [-a | -m | -am]
 
 - `-a`: 한 번 add 되었던 파일을 add를 거치지 않고 커밋
 - `-m '커밋 메시지'`: 커밋 메시지를 작성
+
+<br>
 
 ## 영역 비교
 ### 작업 디렉토리와 스테이징 영역 비교
@@ -206,6 +226,7 @@ git diff --staged HEAD
 Note: switching to 'HEAD~2'.
 You are in 'detached HEAD' state. ...
 
+<br>
 
 ## 커밋 이력 보기
 
@@ -216,6 +237,8 @@ git log --all
 - `--all`: 현재 브랜치에 관계 없이 모든 브랜치의 커밋 이력 보기
 - `--oneline`: 커밋 하나당 한 줄로 표시
 - `--graph`:
+
+<br>
 
 ## 커밋 전환
 ### 한 단계 이전 버전으로 전환
@@ -249,11 +272,15 @@ git checkout <tag name> | <revision number>
 > add, commit은 여전히 가능합니다.
 > Attached HEAD 상태에서는 HEAD가 항상 현재 체크아웃된 브랜치의 가장 최신 커밋을 가리키고 있습니다.
 
+<br>
+
 ## 저장소의 브랜치 목록 보기
 
 ```bash
 git branch
 ```
+
+<br>
 
 ## 브랜치 생성
 
@@ -269,12 +296,16 @@ git checkout -b new-br
 git switch -c new-br
 ```
 
+<br>
+
 ## 브랜치 이름 변경
 ### 현재 브랜치 이름 변경
 
 ```bash
 git branch -m named-br
 ```
+
+<br>
 
 ## 브랜치 이동
 ### 기본 브랜치로 이동
@@ -285,6 +316,8 @@ git switch main
 ```bash
 git switch --detach <tag name> | <revision number>
 ```
+
+<br>
 
 ## 태그
 
