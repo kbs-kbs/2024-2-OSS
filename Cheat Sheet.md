@@ -37,7 +37,7 @@ git config alias.cam "commit -am"
 
 <br>
 
-# 저장소
+# 지역 저장소
 ## 저장소 생성
 ### 현재 폴더를 저장소로 만들기
 
@@ -53,7 +53,8 @@ git init repo
 
 <br>
 
-## 저장소 복제
+# 원격 저장소
+## 원격 저장소 복제
 ### 현재 폴더 하위에 원격 저장소를 복제
 
 ```bash
@@ -64,6 +65,47 @@ git clone <url>
 
 ```bash
 git clone <url> dir
+```
+
+<br>
+
+## 원격 저장소 별칭 출력
+
+```bash
+git remote [-v]
+```
+
+- `-v`: 주소도 출력
+
+<br>
+
+## 원격 저장소 별칭 변경
+
+```bash
+git remote rename origin org
+```
+
+<br>
+
+## 원격 저장소 정보 출력
+
+```bash
+git remote show origin
+```
+
+### 결과
+
+- `(up to date)`: 지역 저장소의 상태가 원격 저장소와 동일
+- `(local out of date)`: 원격 저장소에 변경 사항이 있음 (pull 필요)
+- `(local ahead)`: 지역 저장소에 변경 사항이 있음 (push 필요)
+- `(local diverged)`: 지역 저장소와 원격 저장소에 서로 다른 변경 사항이 있음 (pull, push 필요)
+
+<br>
+
+## 원격 저장소 연결 해제
+
+```bash
+git remote rm orgin
 ```
 
 <br>
