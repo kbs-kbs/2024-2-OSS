@@ -263,25 +263,19 @@ git restore --source=HEAD --staged --worktree file
 ### 작업 디렉토리의 모든 파일
 
 ```bash
-git add --all | -A
+git add --all|-A
 ```
 
-### 현재 디렉토리의 모든 파일(ex: 작업 디렉토리 하위의)
+### 현재 디렉토리와 하위의 모든 파일
 
 ```bash
 git add .
 ```
 
-### 특정 파일
+### 현재 디렉토리의 특정 파일
 
 ```bash
-git add [path/]file1
-```
-
-### 와일드카드
-
-```bash
-git add [path/]file*
+git add file
 ```
 
 <br>
@@ -300,13 +294,15 @@ git commit [-a | -m | -am]
 
 ## 커밋 이력
 
+현재 브랜치의 커밋 이력을 출력합니다.
+
 ```bash
-git log --all
+git log [--all|--oneline|--graph]
 ```
 
-- `--all`: 현재 브랜치에 관계 없이 모든 브랜치의 커밋 이력 보기
-- `--oneline`: 커밋 하나당 한 줄로 표시
-- `--graph`:
+- `--all`: 모든 브랜치의 커밋 이력 출력
+- `--oneline`: 각 커밋을 한 줄로 표시
+- `--graph`: 시각화하여 보여줍니다.
 
 <br>
 
@@ -398,11 +394,13 @@ git diff --staged HEAD
 <br>
 
 # 브랜치
-## 저장소의 브랜치 목록 보기
+## 브랜치 목록 출력
 
 ```bash
-git branch
+git branch [--all]
 ```
+
+- `--all`: 원격 저장소와 연결된 브랜치도 출력합니다.
 
 <br>
 
