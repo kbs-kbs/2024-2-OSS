@@ -1,4 +1,5 @@
-# 기본 설정
+# 설정
+## 기본 설정
 
 ```bash
 git config --system core.autocrlf true
@@ -22,6 +23,16 @@ git config --global init.defaultBranch main
 
 ```bash
 git config --local core.editor "code --wait"
+```
+
+<br>
+
+## 단축 명령어 설정
+
+```bash
+git config alias.ci commit
+git config alias.cm "commit -m"
+git config alias.cam "commit -am"
 ```
 
 <br>
@@ -174,16 +185,6 @@ git restore --staged file
 
 ```bash
 git restore --source=HEAD --staged --worktree file
-```
-
-<br>
-
-## 깃 단축 명령어 설정
-
-```bash
-git config alias.ci commit
-git config alias.cm "commit -m"
-git config alias.cam "commit -am"
 ```
 
 <br>
