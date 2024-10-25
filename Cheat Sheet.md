@@ -330,27 +330,22 @@ git branch
 
 <br>
 
+# 브랜치
 ## 브랜치 생성
+### 생성만
 
 ```bash
-git branch new-br
+git branch br
+```
+
+### 생성과 이동
+
+```bash
+git checkout -b br
 ```
 
 ```bash
-git checkout -b new-br
-```
-
-```bash
-git switch -c new-br
-```
-
-<br>
-
-## 브랜치 이름 변경
-### 현재 브랜치 이름 변경
-
-```bash
-git branch -m named-br
+git switch -c br
 ```
 
 <br>
@@ -361,9 +356,54 @@ git branch -m named-br
 git switch main
 ```
 
+### 특정 브랜치로 이동
+
+```bash
+git switch br
+```
+
+### 이전 브랜치로 이동
+
+```bash
+git switch -
+```
+
+```bash
+git checkout -
+```
+
+### ?
+
 ```bash
 git switch --detach <tag name> | <revision number>
 ```
+
+<br>
+
+## 브랜치 이름 변경
+### 현재 브랜치 이름 변경
+
+```bash
+git branch -m new-br
+```
+
+<br>
+
+## 브랜치 삭제
+### 특정 브랜치 삭제
+
+```bash
+git branch -d br
+```
+
+### 변경 사항이 있는 브랜치 강제 삭제
+
+```bash
+git branch -D new-br
+```
+
+> [!NOTE]
+> 현재 브랜치는 삭제할 수 없습니다.
 
 <br>
 
