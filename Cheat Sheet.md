@@ -69,7 +69,7 @@ ls [-a | -l | -al]
 ### 인덱스의 파일 목록 출력
 
 ```bash
-git ls-files [-s / --stage]
+git ls-files [-s | --stage]
 ```
 - `-s`, `--stage`: SHA-1 해시 값도 출력
 
@@ -102,6 +102,20 @@ Add a line # Ctrl + D: 현재 행 저장 종료 / Ctrl + C: 현재 행 취소 �
 
 ```bash
 touch emptyfile1 emptyfile2
+```
+
+<br>
+
+## 파일 이름 변경
+
+```bash
+git mv file_from file_to
+```
+
+```bash
+mv file_from file_to
+git rm file_from
+git add file_to
 ```
 
 <br>
@@ -214,21 +228,24 @@ index(tracked) ⊇ staging area(staged)
 
 ### 결과
 
-- `Untracked files:`: 작업 디렉토리의 untracked 상태의 파일 목록
-- `Changes not staged for commit:`: `_M`
-  - `deleted` `_D`:
-- `Changes to be committed:`: 스테이징 영역의 파일 목록
-  - `new file:`: `A_` 리포지토리에는 없고 스테이징 영역에만 있는 파일입니다. (staged 상태)
-  - `modified`: `M_` 리포지토리에 있고 (modified & staged 상태)
-  - `deleted:` `` 
+|지역 저장소|스테이징 영역|작업 디렉토리|상태|
+|---|---|---|---|
+|없음|없음|있음|'??'|
+|없음|있음|있음|'A[ |M]'|
+|없음|있음|없음|'AD'|
+|있음|있음|있음|'[ |M][ |M]'|
+|있음|있음|없음|'[ |M]D'|
+|있음|없음|없음|'D '|
 
-- `nothing to commit, working tree clean`: 작업 디렉토리의 모든 파일이 tracked 상태이며 unmodified 상태입니다.
-
-staged + unmodified 상태인 파일은 알 수 없습니다.
-
-
-파일이 스테이징 영역이나 리포지토리 중 한 곳에만 있어도 Git은 해당 파일을 추적하는 것입니다.
-작업 디렉토리에만 존재하는 파일은 Git이 추적하지 않는 파일입니다.
+- '??': "Untracked files"
+- '_ ': "Changes to be committed"
+  - 'A': "new file"
+  - 'M': "modified"
+  - 'D': "deleted"
+- ' _': "Changes not staged for commit"
+  - 'M': "modified"
+  - 'D': "deleted"
+- '  ': "nothing to commit, working tree clean"
 
 <br>
 
@@ -269,26 +286,26 @@ git log --all
 
 <br>
 
-## 커밋 전환
-### 한 단계 이전 버전으로 전환
+## 커밋 로드
+### 한 단계 이전 커밋 로드
 
 ```bash
-git checkout HEAD~
+git checkout HEAD[~|^]
 ```
 
-### n 단계 이전 버전으로 전환
+### n 단계 이전 커밋 로드
 
 ```bash
-git checkout HEAD~n
+git checkout HEAD[~|^]n
 ```
 
-### 최신 버전으로 전환
+### 최신 커밋 로드
 
 ```bash
 git checkout HEAD | main
 ```
 
-### 특정 버전으로 전환
+### 특정 커밋으로 전환
 
 ```bash
 git checkout <tag name> | <revision number>
