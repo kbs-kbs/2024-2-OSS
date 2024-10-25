@@ -110,6 +110,33 @@ git remote rm orgin
 
 <br>
 
+## pull
+
+연결된 원격 저장소의 변경 사항을 브랜치에 적용합니다.
+
+```bash
+git pull origin main
+```
+
+```bash
+git fetch origin
+git merge origin/main
+```
+
+<br>
+
+## push
+
+지역 저장소의 변경 사항을 원격 저장소에 적용합니다. (깃허브에 로그인 또는 PAT 필요)
+
+```bash
+git push origin main [-u]
+```
+
+- `-u`: 다음부터 인자를 생략하여 `git push`로 푸시가 가능해집니다.
+
+<br>
+
 # 파일
 ## 파일 목록 출력
 ### 작업 디렉토리의 파일 목록 출력
