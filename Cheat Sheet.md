@@ -239,15 +239,15 @@ index(tracked) ⊇ staging area(staged)
 |O|O|X|`[ \|M]D`|
 |O|X|X|`D `|
 
-- '??': "Untracked files"
-- '_ ': "Changes to be committed"
-  - 'A': "new file"
-  - 'M': "modified"
-  - 'D': "deleted"
-- ' _': "Changes not staged for commit"
-  - 'M': "modified"
-  - 'D': "deleted"
-- '  ': "nothing to commit, working tree clean"
+- `??`: "Untracked files"
+- `[A\|M\|D]*`: "Changes to be committed"
+  - `A`: "new file"
+  - `M`: "modified"
+  - `D`: "deleted"
+- `*[M\|D]`: "Changes not staged for commit"
+  - `M`: "modified"
+  - `D`: "deleted"
+- `  `: "nothing to commit, working tree clean"
 
 <br>
 
