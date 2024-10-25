@@ -48,7 +48,7 @@ git init [.]
 ### 현재 폴더 하위에 저장소 생성
 
 ```bash
-git init new-repo
+git init repo
 ```
 
 <br>
@@ -63,7 +63,7 @@ git clone <url>
 ### 하위 폴더를 만들고 내부에 원격 저장소를 복제
 
 ```bash
-git clone <url> new-dir
+git clone <url> dir
 ```
 
 <br>
@@ -84,6 +84,7 @@ ls [-a | -l | -al]
 ```bash
 git ls-files [-s | --stage]
 ```
+
 - `-s`, `--stage`: SHA-1 해시 값도 출력
 
 ### 최신 커밋의 파일 목록 출력
@@ -216,24 +217,70 @@ git add [path/]file*
 
 <br>
 
-## 커밋
+# 커밋
+## 커밋 하기
 
 ```bash
 git commit [-a | -m | -am]
 ```
 
-- `-a`: 한 번 add 되었던 파일을 add를 거치지 않고 커밋
-- `-m '커밋 메시지'`: 커밋 메시지를 작성
+- `-a`: 스테이징 영역의 unstaged 상태의 파일을 staged 상태를 거치지 않고 커밋
+- `-m <message>`: 커밋 메시지를 작성
 
 <br>
 
+## 커밋 이력
+
+```bash
+git log --all
+```
+
+- `--all`: 현재 브랜치에 관계 없이 모든 브랜치의 커밋 이력 보기
+- `--oneline`: 커밋 하나당 한 줄로 표시
+- `--graph`:
+
+<br>
+
+## 커밋 이동
+### 이전 커밋 이동
+
+```bash
+git checkout HEAD[~|^]
+```
+
+### n 단계 이전 커밋 이동
+
+```bash
+git checkout HEAD[~|^]n
+```
+
+### 최신 커밋 이동
+
+```bash
+git checkout HEAD | main
+```
+
+### 특정 커밋 이동
+
+```bash
+git checkout <tag name> | <revision number>
+```
+
+> [!NOTE]
+> 이전 커밋으로 이동하면 반드시 "detached HEAD" 상태가 됩니다.   
+> Detached HEAD가 가리키는 커밋은 브랜치가 참조할 수 없게 됩니다. 따라서 간접 참조(HEAD~ 등)가 불가능합니다.   
+> 하지만 해시 값으로 직접 참조할 수 있습니다.
+> add, commit은 여전히 가능합니다.
+> Attached HEAD는 항상 현재 브랜치의 최신 커밋을 가리킵니다.
+
+<br>
+
+# 비교 상태
 ## 저장소의 파일 상태 보기
 
 ```bash
 git status
 ```
-
-index(tracked) ⊇ staging area(staged)
 
 ### 결과
 
@@ -281,51 +328,6 @@ git diff --staged HEAD
 
 <br>
 
-## 커밋 이력 보기
-
-```bash
-git log --all
-```
-
-- `--all`: 현재 브랜치에 관계 없이 모든 브랜치의 커밋 이력 보기
-- `--oneline`: 커밋 하나당 한 줄로 표시
-- `--graph`:
-
-<br>
-
-## 커밋 로드
-### 이전 커밋 로드
-
-```bash
-git checkout HEAD[~|^]
-```
-
-### n 단계 이전 커밋 로드
-
-```bash
-git checkout HEAD[~|^]n
-```
-
-### 최신 커밋 로드
-
-```bash
-git checkout HEAD | main
-```
-
-### 특정 커밋으로 전환
-
-```bash
-git checkout <tag name> | <revision number>
-```
-
-> [!NOTE]
-> 이전 커밋으로 이동하면 반드시 "detached HEAD" 상태가 됩니다.   
-> Detached HEAD가 가리키는 커밋은 브랜치가 참조할 수 없게 됩니다. 따라서 간접 참조(HEAD~ 등)가 불가능합니다.   
-> 하지만 해시 값으로 직접 참조할 수 있습니다.
-> add, commit은 여전히 가능합니다.
-> Attached HEAD는 항상 현재 브랜치의 최신 커밋을 가리킵니다.
-
-<br>
 
 ## 저장소의 브랜치 목록 보기
 
