@@ -1,4 +1,4 @@
-## 기본 설정
+# 기본 설정
 
 ```bash
 git config --system core.autocrlf true
@@ -26,6 +26,7 @@ git config --local core.editor "code --wait"
 
 <br>
 
+# 저장소
 ## 저장소 생성
 ### 현재 폴더를 저장소로 만들기
 
@@ -56,6 +57,7 @@ git clone <url> new-dir
 
 <br>
 
+# 파일
 ## 파일 목록 출력
 ### 작업 디렉토리의 파일 목록 출력
 
@@ -141,7 +143,7 @@ rm file1 file2
 git rm --cached file
 ```
 
-### 작업 디렉토리와 스테이징 영역에서 모두 삭제
+### 인덱스와 작업 디렉토리에서 모두 삭제
 
 ```bash
 git rm file
@@ -156,6 +158,12 @@ git rm file
 git restore file
 ```
 
+### 작업 디렉토리의 파일을 HEAD 커밋의 파일 상태로 복구
+
+```bash
+git restore --source=HEAD file
+```
+
 ### 스테이징 영역의 파일을 HEAD 커밋의 파일 상태로 복구
 
 ```bash
@@ -165,7 +173,7 @@ git restore --staged file
 ### 작업 디렉토리와 스테이징 영역의 파일을 HEAD 커밋의 파일 상태로 복구
 
 ```bash
-git restore [--source=HEAD] --staged --worktree file
+git restore --source=HEAD --staged --worktree file
 ```
 
 <br>
@@ -270,10 +278,6 @@ git diff HEAD
 git diff --staged HEAD
 ```
 
-Note: switching to 'HEAD~2'.
-You are in 'detached HEAD' state. ...
-
-
 <br>
 
 ## 커밋 이력 보기
@@ -289,7 +293,7 @@ git log --all
 <br>
 
 ## 커밋 로드
-### 한 단계 이전 커밋 로드
+### 이전 커밋 로드
 
 ```bash
 git checkout HEAD[~|^]
@@ -314,11 +318,11 @@ git checkout <tag name> | <revision number>
 ```
 
 > [!NOTE]
-> 이전 커밋으로 이동하면 반드시 Detached HEAD 상태가 됩니다.   
+> 이전 커밋으로 이동하면 반드시 "detached HEAD" 상태가 됩니다.   
 > Detached HEAD가 가리키는 커밋은 브랜치가 참조할 수 없게 됩니다. 따라서 간접 참조(HEAD~ 등)가 불가능합니다.   
 > 하지만 해시 값으로 직접 참조할 수 있습니다.
 > add, commit은 여전히 가능합니다.
-> Attached HEAD 상태에서는 HEAD가 항상 현재 체크아웃된 브랜치의 가장 최신 커밋을 가리키고 있습니다.
+> Attached HEAD는 항상 현재 브랜치의 최신 커밋을 가리킵니다.
 
 <br>
 
@@ -407,6 +411,7 @@ git branch -D new-br
 
 <br>
 
+# 버전
 ## 태그
 
 특정 커밋을 버전으로 사용하기
