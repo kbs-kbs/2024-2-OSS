@@ -328,7 +328,7 @@ git diff --staged HEAD
 
 <br>
 
-
+# 브랜치
 ## 저장소의 브랜치 목록 보기
 
 ```bash
@@ -337,7 +337,6 @@ git branch
 
 <br>
 
-# 브랜치
 ## 브랜치 생성
 ### 생성만
 
