@@ -396,7 +396,7 @@ git diff HEAD
 ### 스테이징 영역과 깃 저장소 비교
 
 ```bash
-git diff --staged HEAD
+git diff --staged [HEAD]
 ```
 
 <br>
