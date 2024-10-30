@@ -248,13 +248,13 @@ git restore --source=HEAD file
 ### 스테이징 영역의 파일을 HEAD 커밋의 파일 상태로 복구
 
 ```bash
-git restore --staged file
+git restore [--source=HEAD] --staged file
 ```
 
 ### 작업 디렉토리와 스테이징 영역의 파일을 HEAD 커밋의 파일 상태로 복구
 
 ```bash
-git restore --source=HEAD --staged --worktree file
+git restore [--source=HEAD] --staged --worktree file
 ```
 
 <br>
@@ -284,7 +284,7 @@ git add file
 ## 커밋 하기
 
 ```bash
-git commit [-a | -m | -am]
+git commit [-a|-m|-am]
 ```
 
 - `-a`: 스테이징 영역의 unstaged 상태의 파일을 staged 상태를 거치지 않고 커밋
@@ -303,6 +303,14 @@ git log [--all|--oneline|--graph]
 - `--all`: 모든 브랜치의 커밋 이력 출력
 - `--oneline`: 각 커밋을 한 줄로 표시
 - `--graph`: 시각화하여 보여줍니다.
+
+## 커밋 정보
+
+```bash
+git show <commit-hash>
+```
+
+- `HEAD`: 최신 커밋의 정보 확인(기본값)
 
 <br>
 
