@@ -352,7 +352,7 @@ git checkout <tag name> | <revision number>
 ## 저장소의 파일 상태 보기
 
 ```bash
-git status
+git status [-s]
 ```
 
 ### 결과
