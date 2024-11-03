@@ -399,6 +399,16 @@ git diff HEAD
 git diff --staged [HEAD]
 ```
 
+## 커밋 비교
+
+```bash
+git diff HEAD HEAD^2
+```
+
+```bash
+git diff hash1 hash2
+```
+
 <br>
 
 # 브랜치
