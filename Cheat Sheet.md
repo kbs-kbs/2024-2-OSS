@@ -548,6 +548,19 @@ git stash [save|-m]
 git stash list
 ```
 
+## 임시 저장 파일 확인
+### 최신 임시 저장 항목의 파일 목록 확인
+
+```bash
+git stash show [stash@{0}]
+```
+
+### 특정 임시 저장 항목의 파일 목록 확인
+
+```bash
+git stash show stash@{n}
+```
+
 ## 임시 저장된 변경 사항 적용
 ### 최신 임시 저장 항목 작업 디렉토리에 적용
 
