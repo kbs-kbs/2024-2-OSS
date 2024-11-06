@@ -534,8 +534,13 @@ git branch -D new-br
 ## 임시 저장
 
 ```bash
-git stash
+git stash [save|-m]
 ```
+
+- `save|-m 메시지`: 메시지를 함께 저장합니다.
+
+> [!NOTE]
+> 명령어를 실행하면 작업 디렉토리의 변경 사항과 스테이징 영역의 변경 사항이 모두 하나의 임시 저장 항목으로 합쳐집니다.
 
 ## 임시 저장 목록 확인
 
@@ -544,18 +549,31 @@ git stash list
 ```
 
 ## 임시 저장된 변경 사항 적용
-### 최신 임시 저장 항목 적용
+### 최신 임시 저장 항목 작업 디렉토리에 적용
 
 ```bash
-git stash apply [stash@{0}]
+git stash apply [stash@{0}] [--index]
 ```
+
+- `--index`: untracked 임시 저장 항목을 add 한 후 적용합니다.
 
 ### 특정 임시 저장 항목 적용
 
 ```bash
-git stash apply stash@{n}
+git stash apply stash@{n} [--index]
 ```
 
+- `--index`: untracked 임시 저장 항목을 add 한 후 적용합니다.
+
+### 결과
+
+- `AA`: "both added"
+
+> [!NOTE]
+> git stash apply 후에 스테이징 영역과 헤드를 비교하기 위해 $ git diff --staged 명령어를 사용했는데 비교 결과가 나오지 않고 * Unmerged path f3 이런 결과가 나오는 이유
+> 깃의 충돌 판정은 메타데이터로 판단하기 때문에 적용하려는 파일의 내용이 비어있더라고 충돌이 발생할 수 있습니다.
+> 즉, 임시 저장 후 임시 저장한 원본을 한 번이라도 수정하게 되면 충돌이 발생합니다.
+ 
 ## 임시 저장된 변경 사항 적용 후 삭제
 
 ```bash
