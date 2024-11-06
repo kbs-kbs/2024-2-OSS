@@ -348,16 +348,32 @@ git checkout <tag name> | <revision number>
 
 <br>
 
-# 비교 상태
-## 저장소의 파일 상태 보기
+# 추적 상태 확인
+
+영역을 비교하여 추적 상태를 보여줍니다.
 
 ```bash
 git status [-s]
 ```
 
-### 결과
+`-s`: 추적 상태를 두 개의 문자로 간략히 표시합니다.
 
-저장소와 스테이지를 비교한 것은 녹색으로, 스테이지와 작업 트리를 비교한 것은 빨강으로 표시됩니다.
+## 결과 의미
+
+- "Untracked files": 작업 디렉토리에 깃이 추적하지 않는 파일 있음
+- "Changes to be committed": 스테이지 영역에 변경 사항 있음
+  - "new file": 새로운 파일
+  - "modified": 수정된 파일
+  - "deleted": 삭제된 파일
+- "Changes not staged for commit": 작업 디렉토리에 변경 사항 있음
+  - "modified": 수정된 파일
+  - "deleted": 삭제된 파일
+- "nothing to commit, working tree clean": 모든 영역이 동일함
+
+## 간략히 표시된 결과 의미
+
+첫 번째 문자(초록)는 저장소와 스테이지를 비교한 결과이며, 두 번째 문자(빨강)는 스테이지와 작업 트리를 비교한 결과입니다.   
+이것으로 추적 상태를 판단할 수 있습니다.   
 
 |지역 저장소|스테이징 영역|작업 디렉토리|상태|
 |---|---|---|---|
@@ -369,18 +385,19 @@ git status [-s]
 |O|X|X|`D `|
 
 - `??`: "Untracked files"
-- `[A\|M\|D]*`: "Changes to be committed"
+- `[A|M|D]_`: "Changes to be committed"
   - `A`: "new file"
   - `M`: "modified"
   - `D`: "deleted"
-- `*[M\|D]`: "Changes not staged for commit"
+- `_[M|D]`: "Changes not staged for commit"
   - `M`: "modified"
   - `D`: "deleted"
 - `  `: "nothing to commit, working tree clean"
 
 <br>
 
-## 영역 비교
+# 비교
+## 파일 비교
 ### 작업 디렉토리와 스테이징 영역 비교
 
 ```bash
