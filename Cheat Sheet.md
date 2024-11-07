@@ -586,5 +586,11 @@ git stash apply --index [stash@{n}]
 ## 임시 저장된 변경 사항 적용 후 삭제
 
 ```bash
-git stash pop
+git stash pop [stash@{n}]
+```
+
+## 임시 저장 항목 삭제
+
+```bash
+git stash drop [stash@{n}]
 ```
