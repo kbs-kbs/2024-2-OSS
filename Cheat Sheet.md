@@ -562,21 +562,17 @@ git stash show stash@{n}
 ```
 
 ## 임시 저장된 변경 사항 적용
-### 최신 임시 저장 항목 작업 디렉토리에 적용
+### 임시 저장 항목을 작업 디렉토리에 적용
 
 ```bash
-git stash apply [stash@{0}] [--index]
+git stash apply [stash@{n}] 
 ```
 
-- `--index`: untracked 임시 저장 항목을 add 한 후 적용합니다.
-
-### 특정 임시 저장 항목 적용
+### 임시 저장 항목을 작업 디렉토리와 스테이징 영역에 모두 적용
 
 ```bash
-git stash apply stash@{n} [--index]
+git stash apply --index [stash@{n}] 
 ```
-
-- `--index`: untracked 임시 저장 항목을 add 한 후 적용합니다.
 
 ### 결과
 
